@@ -1,0 +1,21 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<body>
+    <div th:text="${msg}">
+
+    </div>
+    <div th:each="list : ${lists}">
+        <div th:text="${list}"> </div>
+    </div>
+
+    <form method="POST" th:object="${user}" th:action="@{submit}">
+        <input type="text" th:field="*{id}">
+        <input type="text" th:field="*{userName}">
+        <input type="text" th:field="*{sex}">
+        <button type="submit">shang</button>
+    </form>
+
+    <div th:text="${user.id}"></div>
+</body>
+</html>
